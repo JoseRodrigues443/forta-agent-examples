@@ -29,4 +29,4 @@ jobs:
         run: cd ${{matrix.dir}} && if ls ./src/*spec* &>/dev/null ; then npm i && npm run test; else echo "No Jest tests found. Skipping..." ; fi
       # TODO: Make python tests work, for now they break because is not possible to mock Web3
       - name: Build and run PyTest tests
-        run: cd ${{matrix.dir}} && if ls ./src/*test* &>/dev/null ; then npm i && npm run test; else echo "No PyTest tests found. Skipping..." ; fi
+        run: cd ${{matrix.dir}} && if ls ./src/*test* &>/dev/null ; then echo "Tests without secret not supported yet, run locally -> npm i && npm run test"; else echo "No PyTest tests found. Skipping..." ; fi
